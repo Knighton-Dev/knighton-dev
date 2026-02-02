@@ -1,176 +1,203 @@
-# Knighton Dev LLC Website
+# Knighton Dev LLC - Marketing Website
 
-A modern marketing website for Knighton Dev LLC built with Next.js 14, Tailwind CSS, and TypeScript. Hosted on Vercel at [knighton.dev](https://knighton.dev).
+Professional marketing website for Knighton Dev LLC, showcasing platform engineering, DevOps, and site reliability engineering services.
 
-## 🚀 Features
+🌐 **Live Site**: [knighton.dev](https://knighton.dev)
 
-- **Modern Stack**: Next.js 14 with App Router, TypeScript, and Tailwind CSS
-- **Dark Mode Design**: Professional dark theme with Forest Service Green (#228B22) accents
-- **Responsive**: Fully responsive design that works on all devices
-- **SEO Optimized**: Meta tags, Open Graph, and Twitter Card support
-- **Performance**: Optimized for Core Web Vitals
-- **Accessibility**: Built with accessibility best practices
+## Overview
 
-## 📁 Project Structure
+This is a Next.js-based marketing website built with TypeScript, Tailwind CSS, and optimized for deployment on Vercel. The site features a dark theme with forest service green accents and highlights 10+ years of experience in cloud migrations, Kubernetes, CI/CD, and infrastructure as code.
+
+## Features
+
+- 🎨 Dark mode design with forest green accent colors
+- 📱 Fully responsive layout
+- ⚡ Built with Next.js 15 and React 18
+- 🎯 TypeScript for type safety
+- 💅 Tailwind CSS for styling
+- 🚀 Optimized for Vercel deployment
+- 📊 SEO optimized with metadata
+- ♿ Accessible design
+
+## Project Structure
 
 ```
 knighton-dev/
-├── src/
-│   ├── app/
-│   │   ├── page.tsx          # Home page
-│   │   ├── layout.tsx        # Root layout with Navbar/Footer
-│   │   ├── globals.css       # Global styles and CSS variables
-│   │   ├── services/
-│   │   │   └── page.tsx      # Services page
-│   │   ├── about/
-│   │   │   └── page.tsx      # About page
-│   │   └── contact/
-│   │       └── page.tsx      # Contact page
-│   └── components/
-│       ├── Navbar.tsx        # Navigation component
-│       ├── Footer.tsx        # Footer component
-│       └── ContactForm.tsx   # Contact form component
-├── public/                   # Static assets
-├── vercel.json              # Vercel configuration
-├── tailwind.config.ts       # Tailwind configuration
-└── .github/
-    └── workflows/
-        └── deploy.yml        # GitHub Actions CI/CD
+├── app/
+│   ├── layout.tsx          # Root layout with metadata
+│   ├── page.tsx             # Home page
+│   └── globals.css          # Global styles
+├── components/
+│   ├── Header.tsx           # Navigation header
+│   ├── Footer.tsx           # Footer with links
+│   ├── Hero.tsx             # Hero section
+│   ├── Services.tsx         # Services offered
+│   ├── Experience.tsx       # Work experience timeline
+│   ├── Skills.tsx           # Technical skills
+│   └── Contact.tsx          # Contact form
+├── public/                  # Static assets
+├── next.config.ts           # Next.js configuration
+├── tailwind.config.ts       # Tailwind CSS configuration
+├── tsconfig.json            # TypeScript configuration
+├── vercel.json              # Vercel deployment configuration
+└── package.json             # Dependencies and scripts
 ```
 
-## 🛠️ Development
+## Getting Started
 
 ### Prerequisites
 
-- Node.js 18+ 
-- npm or yarn
+- Node.js 18.x or higher
+- npm or yarn package manager
 
-### Getting Started
+### Installation
 
-1. **Install dependencies**:
-   ```bash
-   npm install
-   ```
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/knighton-dev.git
+cd knighton-dev
+```
 
-2. **Run development server**:
-   ```bash
-   npm run dev
-   ```
+2. Install dependencies:
+```bash
+npm install
+```
 
-3. **Open in browser**:
-   Navigate to [http://localhost:3000](http://localhost:3000)
+3. Run the development server:
+```bash
+npm run dev
+```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Development
 
 ### Available Scripts
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start development server |
-| `npm run build` | Build for production |
-| `npm run start` | Start production server |
-| `npm run lint` | Run ESLint |
+- `npm run dev` - Start development server on http://localhost:3000
+- `npm run build` - Build production bundle
+- `npm start` - Start production server
+- `npm run lint` - Run ESLint for code quality
 
-## 🚀 Deployment to Vercel
+### Making Changes
 
-### Option 1: One-Click Deploy (Recommended)
+1. Component files are in `/components`
+2. Page routes are in `/app`
+3. Global styles are in `/app/globals.css`
+4. Tailwind configuration is in `tailwind.config.ts`
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/your-username/knighton-dev)
+## Deployment to Vercel
 
-### Option 2: Vercel CLI
+### Automatic Deployment (Recommended)
 
-1. **Install Vercel CLI**:
-   ```bash
-   npm install -g vercel
-   ```
+1. Push your code to GitHub
+2. Visit [vercel.com](https://vercel.com)
+3. Click "Import Project"
+4. Select your GitHub repository
+5. Vercel will automatically detect Next.js and configure everything
+6. Click "Deploy"
 
-2. **Login to Vercel**:
-   ```bash
-   vercel login
-   ```
+Your site will be live at `your-project.vercel.app` and you can add your custom domain `knighton.dev` in the Vercel dashboard.
 
-3. **Deploy**:
-   ```bash
-   vercel
-   ```
+### Manual Deployment
 
-4. **Deploy to production**:
-   ```bash
-   vercel --prod
-   ```
+If you prefer to deploy manually:
 
-### Option 3: GitHub Integration (CI/CD)
+```bash
+# Install Vercel CLI
+npm install -g vercel
 
-1. **Connect your GitHub repository to Vercel**:
-   - Go to [vercel.com](https://vercel.com)
-   - Click "New Project"
-   - Import your GitHub repository
-   - Vercel will automatically detect Next.js settings
+# Login to Vercel
+vercel login
 
-2. **Set up GitHub Actions (Optional)**:
-   
-   The project includes a GitHub Actions workflow (`.github/workflows/deploy.yml`) for automated deployments.
-
-   **Required Secrets**:
-   - `VERCEL_TOKEN`: Get from [Vercel Settings > Tokens](https://vercel.com/account/tokens)
-   - `VERCEL_ORG_ID`: Found in `.vercel/project.json` after running `vercel link`
-   - `VERCEL_PROJECT_ID`: Found in `.vercel/project.json` after running `vercel link`
-
-   **To set up**:
-   ```bash
-   # Link your project to Vercel
-   vercel link
-   
-   # This creates .vercel/project.json with orgId and projectId
-   cat .vercel/project.json
-   ```
-
-   Add these values as secrets in your GitHub repository settings.
+# Deploy to production
+vercel --prod
+```
 
 ### Custom Domain Setup
 
 1. Go to your Vercel project dashboard
-2. Navigate to "Settings" > "Domains"
-3. Add `knighton.dev`
-4. Configure your DNS:
-   - Add an `A` record pointing to `76.76.21.21`
-   - Or add a `CNAME` record pointing to `cname.vercel-dns.com`
+2. Navigate to Settings → Domains
+3. Add `knighton.dev` and `www.knighton.dev`
+4. Update your domain's DNS settings with the provided records:
+   - Add an A record pointing to Vercel's IP
+   - Add a CNAME record for www subdomain
+5. Wait for DNS propagation (usually 5-60 minutes)
 
-## 🎨 Customization
+### Environment Variables
+
+If you need to add environment variables (e.g., for contact form integration):
+
+1. Go to Vercel Dashboard → Your Project → Settings → Environment Variables
+2. Add your variables
+3. Redeploy the application
+
+## Customization
 
 ### Colors
 
-The color scheme uses CSS variables defined in `globals.css`:
+The forest green theme can be customized in [tailwind.config.ts](tailwind.config.ts):
 
-```css
-:root {
-  --color-primary: #228B22;        /* Forest Service Green */
-  --color-primary-light: #2ea82e;
-  --color-primary-dark: #1a6b1a;
-  --color-bg-primary: #0a0a0a;
-  --color-bg-secondary: #111111;
-  /* ... more colors */
+```typescript
+colors: {
+  forest: {
+    50: '#f0f7f4',
+    // ... modify these values
+    900: '#1c382e',
+  },
 }
 ```
 
 ### Content
 
-- **Company Info**: Update in `src/app/layout.tsx` metadata
-- **Services**: Edit `src/app/services/page.tsx`
-- **About Content**: Edit `src/app/about/page.tsx`
-- **Contact Info**: Edit `src/app/contact/page.tsx`
-- **Social Links**: Edit `src/components/Footer.tsx`
+- Update services in [components/Services.tsx](components/Services.tsx)
+- Modify experience in [components/Experience.tsx](components/Experience.tsx)
+- Change skills in [components/Skills.tsx](components/Skills.tsx)
+- Edit contact info in [components/Contact.tsx](components/Contact.tsx)
 
-## 📧 Contact Form
+### Metadata & SEO
 
-The contact form currently uses a `mailto:` link as a fallback. To enable server-side form handling:
+Update SEO metadata in [app/layout.tsx](app/layout.tsx):
 
-1. **Option A: Formspree**
-   - Sign up at [formspree.io](https://formspree.io)
-   - Update `ContactForm.tsx` with your form endpoint
+```typescript
+export const metadata: Metadata = {
+  title: "Your Title",
+  description: "Your Description",
+  keywords: ["Your", "Keywords"],
+};
+```
 
-2. **Option B: Vercel Functions**
-   - Create an API route at `src/app/api/contact/route.ts`
-   - Integrate with email service (SendGrid, Resend, etc.)
+## Performance
 
-## 📝 License
+This site is optimized for performance:
+- Static generation where possible
+- Image optimization with Next.js Image component
+- Minimal JavaScript bundle size
+- CSS purging with Tailwind
+- Vercel Edge Network CDN
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## Contributing
+
+This is a personal business website, but suggestions are welcome! Please open an issue for discussions.
+
+## License
 
 © 2026 Knighton Dev LLC. All rights reserved.
+
+## Contact
+
+- **Email**: ian@knighton.dev
+- **Phone**: +1 (208) 419-9489
+- **LinkedIn**: [linkedin.com/in/probablynotian](https://linkedin.com/in/probablynotian)
+- **Website**: [knighton.dev](https://knighton.dev)
+
+---
+
+Built with ❤️ using Next.js, TypeScript, and Tailwind CSS
