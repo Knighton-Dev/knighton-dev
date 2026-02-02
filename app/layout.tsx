@@ -10,6 +10,10 @@ export const metadata: Metadata = {
   title: "Knighton Dev LLC | Cloud & Platform Engineering",
   description: "Professional platform, DevOps, and site reliability engineering services. We specialize in cloud migrations, Kubernetes, CI/CD, and infrastructure as code.",
   keywords: ["DevOps", "Platform Engineering", "SRE", "Cloud Migration", "Kubernetes", "Terraform", "AWS", "GCP", "Azure"],
+  icons: {
+    icon: '/avatar.png',
+    apple: '/avatar.png',
+  },
 };
 
 export default function RootLayout({
